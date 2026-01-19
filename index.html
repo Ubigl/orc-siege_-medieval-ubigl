@@ -1,61 +1,63 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Orc Siege: Medieval Defense</title>
-  <meta name="theme-color" content="#10b981">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="manifest" href="/assets/manifest-CCldNLHG.json">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #064e3b;
-      font-family: 'Inter', sans-serif;
-      touch-action: none;
-    }
-    canvas {
-      image-rendering: auto;
-    }
-    #root {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  </style>
-
-<link rel="stylesheet" href="/index.css">
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
-  }
-}
-</script>
-  <script type="module" crossorigin src="/assets/index-CGBUa5QR.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft 2.0</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="root"></div>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-          .then(reg => console.log('SW registered'))
-          .catch(err => console.log('SW registration failed: ', err));
-      });
+    <div id="blocker">
+        <div id="instructions">
+            <h1>Minecraft 2.0</h1>
+            <p>Нажмите для начала игры</p>
+            <p>WASD - движение | Пробел - прыжок | Shift - бег</p>
+            <p>ЛКМ - разрушить блок | ПКМ - поставить блок</p>
+            <p>1-5 - выбор блока</p>
+        </div>
+    </div>
+
+    <div id="crosshair">+</div>
+
+    <div id="hotbar">
+        <div class="hotbar-slot selected" data-slot="0">
+            <img src="Assets/Dirt.png" alt="Dirt">
+            <span class="slot-key">1</span>
+            <span class="slot-count">0</span>
+        </div>
+        <div class="hotbar-slot" data-slot="1">
+            <img src="Assets/grass.png" alt="Grass">
+            <span class="slot-key">2</span>
+            <span class="slot-count">0</span>
+        </div>
+        <div class="hotbar-slot" data-slot="2">
+            <img src="Assets/stone.png" alt="Stone">
+            <span class="slot-key">3</span>
+            <span class="slot-count">0</span>
+        </div>
+        <div class="hotbar-slot" data-slot="3">
+            <img src="Assets/tree.jpg" alt="Wood">
+            <span class="slot-key">4</span>
+            <span class="slot-count">0</span>
+        </div>
+        <div class="hotbar-slot" data-slot="4">
+            <img src="Assets/foliage.jpg" alt="Leaves">
+            <span class="slot-key">5</span>
+            <span class="slot-count">0</span>
+        </div>
+    </div>
+
+    <div id="debug"></div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
     }
-  </script>
+    </script>
+
+    <script type="module" src="game.js"></script>
 </body>
 </html>
