@@ -143,8 +143,8 @@ class Game {
             dirt: loadTexture('Assets/Dirt.png'),
             grass: loadTexture('Assets/grass.png'),
             stone: loadTexture('Assets/stone.png'),
-            wood: loadTexture('Assets/tree.jpg'),
-            leaves: loadTexture('Assets/foliage.jpg')
+            wood: loadTexture('Assets/tree.png'),
+            leaves: loadTexture('Assets/foliage.png')
         };
 
         this.materials = {
